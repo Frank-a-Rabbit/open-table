@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from open_table.views.HomePageView import HomePageView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', HomePageView.as_view(), name='homepage'),
+    path('admin/<int:id>', admin.site.urls)
 ]
