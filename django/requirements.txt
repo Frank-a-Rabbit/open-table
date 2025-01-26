@@ -1,0 +1,21 @@
+# Core Dependencies
+django>=4.0,<5.1             # The Django framework
+djangorestframework>=3.14,<4.0  # Django REST Framework for building APIs
+
+# Database Driver
+psycopg2-binary>=2.9,<3.0       # PostgreSQL adapter for Django
+
+# Optional Utilities
+django-cors-headers>=3.13,<4.0  # Handles Cross-Origin Resource Sharing (CORS) for APIs
+python-decouple>=3.8,<4.0       # Manage environment variables in a .env file
+gunicorn>=20.1,<21.0            # WSGI HTTP server for production
+
+# Testing
+pytest>=7.0,<8.0                # Testing framework
+pytest-django>=4.5,<5.0         # Django integration with pytest
+
+# Linting
+flake8>=6.0,<7.0                # Linter for code quality
+
+# Security
+django-environ>=0.10,<1.0       # Environment variable management (alternative to python-decouple)
