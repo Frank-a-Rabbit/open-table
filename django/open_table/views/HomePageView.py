@@ -5,9 +5,8 @@ from django.views import View
 
 class HomePageView(View):
     def get(self, request):
-        print('Testing')
-        # Check if the user is authenticated
-        if request.user.is_authenticated:
+        if request.user:
             return HttpResponse(f"Welcome, {request.user.username}!")
         else:
-            return redirect('/login/')  # Redirect to login page if not authenticated
+            print('No authenticated user')
+            return redirect('/login/')
