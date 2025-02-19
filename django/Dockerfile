@@ -18,6 +18,9 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copy the entire Django project into the container
+COPY . /app/
+
 # Expose the default Django port
 EXPOSE 8000
 

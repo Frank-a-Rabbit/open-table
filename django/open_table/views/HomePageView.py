@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.views import View
 
@@ -6,8 +6,9 @@ from django.views import View
 class HomePageView(View):
     def get(self, request):
         print('Testing')
+
         # Check if the user is authenticated
         if request.user.is_authenticated:
-            return HttpResponse(f"Welcome, {request.user.username}!")
+            return JsonResponse({"message": "Welcome!", "user": request.user.username})
         else:
-            return redirect('/login/')  # Redirect to login page if not authenticated
+            return JsonResponse({"error": "Unauthorized"}, status=401)
